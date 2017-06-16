@@ -3003,6 +3003,7 @@ static bool zone_allows_reclaim(struct zone *local_zone, struct zone *zone)
  * get_page_from_freelist goes through the zonelist trying to allocate
  * a page.
  */
+// page reclaim process start here
 static struct page *
 get_page_from_freelist(gfp_t gfp_mask, unsigned int order, int alloc_flags,
 						const struct alloc_context *ac)
@@ -3987,6 +3988,7 @@ static inline void finalise_ac(gfp_t gfp_mask,
 /*
  * This is the 'heart' of the zoned buddy allocator.
  */
+// buddy system allocation entry point here
 struct page *
 __alloc_pages_nodemask(gfp_t gfp_mask, unsigned int order,
 			struct zonelist *zonelist, nodemask_t *nodemask)
@@ -5325,7 +5327,7 @@ not_early:
 		}
 	}
 }
-
+// starting point for the code trace
 static void __meminit zone_init_free_lists(struct zone *zone)
 {
 	unsigned int order, t;
